@@ -1,15 +1,42 @@
-import React from "react";
-import Header from "./Header";
-import Order from "./Order";
-import Inventory from "./Inventory";
-import sampleFishes from '../sample-fishes';
+// import React from "react";
+// import Header from "./Header";
+// import Order from "./Order";
+// import Inventory from "./Inventory";
+// import sampleFishes from '../sample-fishes';
+// import Fish from './Fish';
+// import base from '../base';
+
+
+import React from 'react';
+import Header from './Header';
+import Order from './Order';
+import Inventory from './Inventory';
 import Fish from './Fish';
+import sampleFishes from '../sample-fishes';
+import base from '../base';
 
 class App extends React.Component {
   state = {
     fishes: {},
     order: {}
   };
+
+componentDidMount(){
+  const { params } = this.props.match;
+  this.ref = base.syncState(`${params.storeID}/fishes`, {
+    context: this,
+    state: 'fishes'
+  });
+}
+
+componentWillUnmount() {
+  base.removeBinding(this.ref);
+}
+
+componentDidUpdate() {
+  console.log(this.state.order);
+}
+
   addFish = (fish) => {
     const fishes = {...this.state.fishes};
     fishes[`fish${Date.now()}`] = fish;

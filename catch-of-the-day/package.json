@@ -9,16 +9,18 @@
   "dependencies": {
     "autoprefixer-stylus": "0.14.0",
     "firebase": "^4.10.1",
+    "grpc": "^1.16.0",
     "prop-types": "^15.6.0",
+    "protobufjs": "5.0.3",
     "re-base": "3.2.2",
     "react": "^16.3.0-alpha.1",
     "react-dom": "^16.3.0-alpha.1",
+    "react-rebase": "^1.0.5",
     "react-router-dom": "^4.2.2",
     "react-transition-group": "^2.2.1",
     "serve": "^7.0.0",
     "stylus": "0.54.5",
-    "url-parse": "1.4.3",
-    "protobufjs": "5.0.3"
+    "url-parse": "1.4.3"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -27,5 +29,9 @@
     "eject": "react-scripts eject",
     "styles": "stylus -u autoprefixer-stylus ./src/css/style.styl -o ./src/css/style.css",
     "styles:watch": "stylus -u autoprefixer-stylus -w ./src/css/style.styl -o ./src/css/style.css"
-  }
+  },
+  "main": "index.js",
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }
